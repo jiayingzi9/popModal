@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Sean Nieuwoudt" />
+	<meta name="robots" content="all" />
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="popdown.css">
+	<style>
+		.btn{
+			display:inline-block;
+			color:#fff;
+			text-decoration:none;
+			padding:10px;
+			margin-bottom: 20px;
+		  	-webkit-border-radius: 5px;
+		  	-moz-border-radius: 5px;
+		  	border-radius: 5px;
+		  	-moz-transition-duration: 0.2s;
+		  	-webkit-transition-duration: 0.2s;
+		  	-o-transition-duration: 0.2s;
+		  	transition-duration: 0.2s;
+			background:#337ab7;
+		}
+		/*中间内容自定义*/
+		.jf-popdown-body {
+			padding: 20px;
+			text-align: left;
+			overflow: auto;
+		}
+		.jf-popdown-body h3 {
+			margin: 0;
+			padding: 0;
+			font-size: 18px;
+			color: #727272;
+			font-family: "Helvetica Neue", Helvetica, "pragmatica-web", Arial, sans-serif;
+			text-align: center;
+		}
+		.jf-popdown-body p {
+			text-indent: 2em;
+			font-size: 16px;
+			line-height: 25px;
+			color: #878787;
+		}
+	</style>
+</head>
+<body class="">
+<a href="pages/content.html" class="jf-popdown btn" title="">点击弹出模态框</a>
+	<script src="jquery-1.12.4.js"></script>
+	<script src="popdown.js"></script>
+	<script type="text/javascript">
+		new window['popdown']($('.jf-popdown'),{
+			width:'60%',//自定义宽度,默认宽度是300px
+            height:'auto',//高度可以自定义,默认为自适应
+            title:'自定义标题',//自定义标题
+            footerTitle:'关闭',
+			headerBG:'#f5f5f5',//头部自定义颜色,默认颜色为灰色
+			footbtnBG:'#f0ad4e',//关闭按钮自定义颜色,默认颜色为蓝色
+            magnifyWinColor:'2px solid #464646',//放大窗口定义颜色
+            shrinkWinColor:'2px solid #464646',//缩小窗口定义颜色
+            popdownOpacity:'url(img/blend-bg.png) repeat',//模态框背景
+            zoomPopdown:'url("img/window-zoom-icon.png") no-repeat right transparent',//拉动图片
+            popdownLoading:'background: url(img/popdown-loading.gif) no-repeat center center',//加载图片
+			//打开模态框扩展方法
+			onloadBg:function (e) {
+			    console.log('打开模态框');
+            }
+		});
+	</script>
+
+</body>
+</html>
